@@ -1,10 +1,17 @@
 import Register from '../components/register/register';
 
 import 'firebase/firestore';
+import { FirestoreProvider, useFirebaseApp } from 'reactfire';
+import { getFirestore } from 'firebase/firestore';
 
 const RegisterPage = () => {
+  const firestoreInstance = getFirestore(useFirebaseApp());
+  
   return <div className="page">
-    <Register></Register>
+    REGISTER
+    <FirestoreProvider sdk={firestoreInstance}>
+      <Register></Register>
+    </FirestoreProvider>
   </div>
 }
 

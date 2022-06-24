@@ -6,6 +6,7 @@ import FormInput from '../form-input/form-input';
 import FormButton from '../form-button/form-button';
 
 import "./styles.css";
+import { Link } from 'react-router-dom';
 
 export interface UserProfile {
   username: string,
@@ -89,7 +90,7 @@ const Login = () => {
         {renderErrorMessage("pass")}
         <FormButton title="Log in" onClick/>
       </form>
-      <a href="/register"></a>
+      <Link to="/register">Registrate</Link>
     </div>
   );
 }

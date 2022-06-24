@@ -9,9 +9,13 @@ import LoginPage from './pages/loginPage';
 import ProfilePage from './pages/profilePage';
 import RegisterPage from './pages/registerPage';
 import LandingPage from './pages/landingPage';
+import { FirebaseAppProvider } from 'reactfire';
+import firebaseConfig from './config/firebaseConfig';
 
 const rootElement = document.getElementById('root')!;
+
 ReactDOM.createRoot(rootElement).render(
+  <FirebaseAppProvider firebaseConfig={firebaseConfig}>
     <Suspense fallback={<p>Cargando...</p>}>
       <BrowserRouter>
         <Routes>
@@ -28,4 +32,5 @@ ReactDOM.createRoot(rootElement).render(
         </Routes>
       </BrowserRouter>
     </Suspense>
+  </FirebaseAppProvider>
 );
